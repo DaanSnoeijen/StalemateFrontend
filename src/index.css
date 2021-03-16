@@ -28,7 +28,7 @@ body {
   background: #a07457; 
 }
 
-.main-page .game-menu{
+.game-menu{
   margin-top: -25%;
   margin-left: -85%;
 }
@@ -44,4 +44,17 @@ button{
 }
 button:hover{
   background-color: #d69c76;
+}
+
+.sidebar{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 550px;
+  height: 1500px;
+  z-index: 1;
+  top: -150px;
+  left: 45%;
+  background-color: #b88767;
+  overflow-x: hidden;
 }
