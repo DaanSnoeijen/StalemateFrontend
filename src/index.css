@@ -1,13 +1,47 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.app {
+  text-align: center;
+  background-color: #d69c76;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Times New Roman";
+  font-size: calc(10px + 2vmin);
+  color: rgb(255, 255, 255);
+}
+
+.main-page .chess-board { 
+  margin-left: auto;
+  margin-right: auto;
+  border-spacing: 0; 
+  border-collapse: collapse;
+}
+.main-page .chess-board .light { 
+  background: rgb(255, 177, 141);
+}
+.main-page .chess-board .dark { 
+  background: #a07457; 
+}
+
+.main-page .game-menu{
+  margin-top: -25%;
+  margin-left: -85%;
+}
+
+button{
+  background-color: #b88767;
+  font-size: 50px;
+  border-radius: 12px;
+  padding: 0;
+  border: none;
+  padding: 20px 49px;
+  box-shadow: -3px -3px #b88767;
+}
+button:hover{
+  background-color: #d69c76;
 }

@@ -3,17 +3,6 @@ const ChessBoard = () => {
         <table className="chess-board">
             <tbody>
                 <tr>
-                    <th></th>
-                    <th>a</th>
-                    <th>b</th>
-                    <th>c</th>
-                    <th>d</th>
-                    <th>e</th>
-                    <th>f</th>
-                    <th>g</th>
-                    <th>h</th>
-                </tr>
-                <tr>
                     <th>8</th>
                     <td class="light">♜</td>
                     <td class="dark">♞</td>
@@ -100,6 +89,17 @@ const ChessBoard = () => {
                     <td class="light">♗</td>
                     <td class="dark">♘</td>
                     <td class="light">♖</td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th>a</th>
+                    <th>b</th>
+                    <th>c</th>
+                    <th>d</th>
+                    <th>e</th>
+                    <th>f</th>
+                    <th>g</th>
+                    <th>h</th>
                 </tr>
             </tbody>
         </table>
