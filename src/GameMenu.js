@@ -13,6 +13,11 @@ const GameMenu = () => {
     }
 
     const [username, setUsername] = useState();
+    const [password, setPassword] = useState();
+
+    function LogIn(){
+        console.log({username} + {password});
+    }
 
     return ( 
         <div>
@@ -25,10 +30,13 @@ const GameMenu = () => {
                     <button onClick={onMenuClickClose}>=</button>
                 </div>
                 <div className="username">
-                    <input type="text" placeholder="Username"></input>
+                    <input type="text" placeholder="Username" onChange={(e) => {setUsername(e.target.value)}}></input>
                 </div>
                 <div className="password">
-                    <input type="text" placeholder="Password"></input>
+                    <input type="text" placeholder="Password" onChange={(e) => {setPassword(e.target.value)}}></input>
+                </div>
+                <div className="login-button">
+                    <button className="buttonLogIn" onClick={LogIn}>Log in</button>
                 </div>
             </div>
         </div>

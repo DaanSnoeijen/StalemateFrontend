@@ -82,3 +82,11 @@ button:hover{
   top: 480px;
   z-index: 1;
 }
+
+.login-button{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  top: 550px;
+  z-index: 1;
+}
