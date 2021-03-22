@@ -51,10 +51,34 @@ button:hover{
   display: flex;
   flex-direction: column;
   width: 550px;
-  height: 1500px;
+  height: 2000px;
   z-index: 1;
-  top: -150px;
-  left: 45%;
+  top: -500px;
+  left: 46%;
   background-color: #b88767;
   overflow-x: hidden;
+}
+
+.button{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  top: 400px;
+  z-index: 1;
+}
+
+.username{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  top: 450px;
+  z-index: 1;
+}
+
+.password{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  top: 480px;
+  z-index: 1;
 }
