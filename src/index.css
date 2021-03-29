@@ -90,3 +90,10 @@ button:hover{
   top: 550px;
   z-index: 1;
 }
+.logged-in{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  top: -2150px;
+  left: 700px;
+}

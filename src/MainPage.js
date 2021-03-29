@@ -1,5 +1,6 @@
 import ChessBoard from './ChessBoard';
 import GameMenu from './GameMenu';
+import LoggedIn from './LoggedIn';
 
 const MainPage = () => {
     return ( 
@@ -8,6 +9,9 @@ const MainPage = () => {
             <ChessBoard />
             <div className="game-menu">
                 <GameMenu />
+            </div>
+            <div className="logged-in">
+                <LoggedIn />
             </div>
         </div>
      );
