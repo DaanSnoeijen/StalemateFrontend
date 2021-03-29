@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const GameMenu = () => {
+const GameMenu = (props) => {
 
     const onMenuClickOpen = () => {
         document.getElementById("sideBarClosed").style.position = "relative";
@@ -15,8 +15,9 @@ const GameMenu = () => {
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
 
-    function LogIn(){
-        console.log({username} + {password});
+    function LogIn(e){
+        e.preventDefault();
+        props.functionCallFromParent(username);
     }
 
     return ( 
@@ -36,7 +37,7 @@ const GameMenu = () => {
                     <input type="text" placeholder="Password" onChange={(e) => {setPassword(e.target.value)}}></input>
                 </div>
                 <div className="login-button">
-                    <button className="buttonLogIn" onClick={LogIn}>Log in</button>
+                    <button className="buttonLogIn" onClick={LogIn.bind(this)}>Log in</button>
                 </div>
             </div>
         </div>
