@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from 'axios';
 
 const GameMenu = (props) => {
 
@@ -14,10 +15,41 @@ const GameMenu = (props) => {
 
     const [username, setUsername] = useState();
     const [password, setPassword] = useState();
+    const [elo, setElo] = useState();
 
     function LogIn(e){
         e.preventDefault();
-        props.functionCallFromParent(username);
+
+        axios.get('http://localhost:3000/api/player/getPlayer', { username, password })
+            .then((response) => {
+                console.log(response.data);
+
+                if (response.data == null){
+                    alert("Verkeerde inloggegevens!")
+                }
+                else{
+                    alert("U bent ingelogd!");
+
+                    setUsername(response.data.username);
+                    setElo(response.data.elo);
+                }
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+
+        props.functionCallFromParent(username, elo);
+    }
+
+    function Register(){
+        axios.get('http://localhost:3000/api/player/postPlayer', { username, password })
+            .then((response) => {
+                console.log(response.data);
+                alert("Account aangemaakt!");
+            })
+            .catch((error) => {
+                console.log(error);
+            })
     }
 
     return ( 
@@ -38,6 +70,9 @@ const GameMenu = (props) => {
                 </div>
                 <div className="login-button">
                     <button className="buttonLogIn" onClick={LogIn.bind(this)}>Log in</button>
+                </div>
+                <div className="register-button">
+                    <button className="buttonRegister" onClick={Register}>Register</button>
                 </div>
             </div>
         </div>

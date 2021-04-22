@@ -90,6 +90,15 @@ button:hover{
   top: 550px;
   z-index: 1;
 }
+
+.register-button{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  top: 600px;
+  z-index: 1;
+}
+
 .logged-in{
   position: relative;
   display: flex;
