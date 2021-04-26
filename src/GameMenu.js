@@ -20,7 +20,7 @@ const GameMenu = (props) => {
     function LogIn(e){
         e.preventDefault();
 
-        axios.get('http://localhost:3000/api/player/getPlayer', { username, password })
+        axios.get(`http://localhost:8080/api/player/getPlayer`, { username, password })
             .then((response) => {
                 console.log(response.data);
 
@@ -42,7 +42,9 @@ const GameMenu = (props) => {
     }
 
     function Register(){
-        axios.get('http://localhost:3000/api/player/postPlayer', { username, password })
+        let payload = {'Username': username, 'Password': password}
+
+        axios.post(`http://localhost:8080/api/player/postPlayer`, payload)
             .then((response) => {
                 console.log(response.data);
                 alert("Account aangemaakt!");
