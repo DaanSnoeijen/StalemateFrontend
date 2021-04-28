@@ -46,7 +46,7 @@ const GameMenu = (props) => {
     function Register(){
         let payload = {'Username': username, 'Password': password}
 
-        axios.post(`http://localhost:8080/api/player/postPlayer`, JSON.stringify(payload))
+        axios.post(`http://localhost:8080/api/player/postPlayer`, payload)
             .then((response) => {
                 console.log(response.data);
                 alert("Account aangemaakt!");
