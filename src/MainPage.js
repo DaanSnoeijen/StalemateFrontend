@@ -6,11 +6,11 @@ import LoggedIn from './LoggedIn';
 const MainPage = () => {
 
     const [username, setUsername] = useState();
-    const elo = "1369";
+    const [elo, setElo] = useState();
 
-    const parentFunction = (Username) => {
+    const parentFunction = (Username, Elo) => {
         setUsername(Username);
-        console.log(username);
+        setElo(Elo);
     }
 
     return ( 

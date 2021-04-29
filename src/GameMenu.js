@@ -34,24 +34,31 @@ const GameMenu = (props) => {
 
                     setUsername(response.data.username);
                     setElo(response.data.elo);
+
+                    props.functionCallFromParent(username, elo);
                 }
             })
             .catch((error) => {
+                alert("There seems to be an issue...");
                 console.log(error);
             })
-
-        props.functionCallFromParent(username, elo);
     }
 
-    function Register(){
+    function Register(e){
+        e.preventDefault();
+
         let payload = {'Username': username, 'Password': password}
 
         axios.post(`http://localhost:8080/api/player/postPlayer`, payload)
             .then((response) => {
                 console.log(response.data);
+                setElo(800);
                 alert("Account aangemaakt!");
+
+                props.functionCallFromParent(username, elo);
             })
             .catch((error) => {
+                alert("There seems to be an issue...");
                 console.log(error);
             })
     }
@@ -76,7 +83,7 @@ const GameMenu = (props) => {
                     <button className="buttonLogIn" onClick={LogIn.bind(this)}>Log in</button>
                 </div>
                 <div className="register-button">
-                    <button className="buttonRegister" onClick={Register}>Register</button>
+                    <button className="buttonRegister" onClick={Register.bind(this)}>Register</button>
                 </div>
             </div>
         </div>
