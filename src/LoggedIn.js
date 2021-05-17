@@ -5,7 +5,7 @@ function LoggedIn(props) {
     const elo = props.Elo;
 
     return (
-        <div>
+        <div className="logged-in">
             <h4>Logged in as: {username}</h4>
             <h4>Elo: {elo}</h4>
         </div>
