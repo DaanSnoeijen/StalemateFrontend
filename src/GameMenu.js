@@ -22,7 +22,7 @@ const GameMenu = (props) => {
 
         let payload = {'Username': username, 'Password': password}
 
-        axios.get(`http://localhost:8080/api/player/getPlayer`, payload)
+        axios.post(`http://localhost:8080/api/player/getPlayer`, payload)
             .then((response) => {
                 console.log(response.data);
 
