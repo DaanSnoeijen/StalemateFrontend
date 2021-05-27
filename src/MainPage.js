@@ -17,6 +17,7 @@ const MainPage = () => {
         <div className="main-page">
             <h1>Stalemate</h1>
             <ChessBoard />
+            <a href="https://jsfiddle.net/q76uzxwe/1/">Real chess ai</a>
             <div className="game-menu">
                 <GameMenu functionCallFromParent={parentFunction.bind(this)} />
             </div>
