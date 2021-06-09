@@ -2,8 +2,20 @@ import { useState } from 'react';
 import ChessBoard from './ChessBoard';
 import GameMenu from './GameMenu';
 import LoggedIn from './LoggedIn';
+import { w3cwebsocket as W3CWebSocket } from "websocket";
+
+const client = new W3CWebSocket('ws://localhost:8000');
 
 const MainPage = () => {
+
+    client.onopen = () => {
+        console.log('WebSocket Client Connected');
+    };
+    client.onmessage = (message) => {
+        const dataFromServer = JSON.parse(message.data);
+        console.log(dataFromServer);
+        alert(message);
+    }
 
     const [username, setUsername] = useState();
     const [elo, setElo] = useState();
