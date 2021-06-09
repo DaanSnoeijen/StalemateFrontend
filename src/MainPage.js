@@ -14,7 +14,10 @@ const MainPage = () => {
     client.onmessage = (message) => {
         const dataFromServer = JSON.parse(message.data);
         console.log(dataFromServer);
-        alert(message);
+        alert("Uw account is gedelete. Hierdoor bent u uitgelogd");
+
+        setUsername("");
+        setElo("");
     }
 
     const [username, setUsername] = useState();
